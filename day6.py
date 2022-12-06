@@ -8,7 +8,6 @@ if len(sys.argv) < 2:
 
 signal = sys.argv[1]
 marker = []
-marker_index = []
 marker_count = 0
 
 
@@ -17,7 +16,6 @@ for index, char in enumerate(signal):
     if char not in marker and marker_count < 4:
         marker.append(char)
         marker_count +=1
-        marker_index.append(index)
         if marker_count == 4:
             print ("Start of Packet: " + str(index+1))
             break
