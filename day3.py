@@ -6,13 +6,16 @@ alphabet = list(string.ascii_lowercase)
 total_priority = 0
 total_priority_part_2 = 0
 
-test = ["vJrwpWtwJgWrhcsFMMfFFhFp", "jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL", "PmmdzqPrVvPwwTWBwg", "wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn", "ttgJtRGJQctTZtZT", "CrZsJsPPZsGzwwsLwLmpwMDw"]
+test = ["vJrwpWtwJgWrhcsFMMfFFhFp", "jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL", "PmmdzqPrVvPwwTWBwg",
+        "wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn", "ttgJtRGJQctTZtZT", "CrZsJsPPZsGzwwsLwLmpwMDw"]
+
 
 def get_priority(value):
     if same_item in alphabet:
         return alphabet.index(same_item) + 1
     else:
         return alphabet.index(same_item.lower()) + 1 + 26
+
 
 # get all line
 with open('day3.txt', 'r', encoding="utf-8") as f:
@@ -48,5 +51,5 @@ for i in range(0, len(lines), 3):
 
     total_priority_part_2 += get_priority(same_item)
 
-print("Part 1 - Total Priority: " +str(total_priority))
-print("Part 2 - Total Priority: " +str(total_priority_part_2))
+print("Part 1 - Total Priority: " + str(total_priority))
+print("Part 2 - Total Priority: " + str(total_priority_part_2))
